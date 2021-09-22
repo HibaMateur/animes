@@ -1,0 +1,14 @@
+@import "~antd/dist/antd.css";
+
+.CardList {
+  border-radius: 20px;
+  top: 60px;
+  left: 440px;
+  background-color: transparent;
+  border-color: #8079e0;
+  backdrop-filter: blur(6px);
+}
+.listFont {
+  color: #8079e0;
+  font-weight: bold;
+}
