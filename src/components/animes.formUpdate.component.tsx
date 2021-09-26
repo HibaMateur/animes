@@ -1,6 +1,7 @@
 import { Button, Card, Form, Input } from "antd";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useParams } from "react-router";
 import "./animes.form.style.css";
 
 const AnimesFormUpdate = () => {
@@ -28,16 +29,19 @@ const AnimesFormUpdate = () => {
   const genreChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setGenre(e.target.value);
   };
-  const editAnimeHandler = (id: number) => {
+  const param = useParams<any>();
+  const editAnimeHandler = (anime: any) => {
     dispatch({
       type: "EDIT_ANIME",
       payload: {
-        id,
-        name: name,
-        mangaka: mangaka,
+        anime: {
+          id: param.animeId,
+          name: name,
+          mangaka: mangaka,
 
-        description: description,
-        genre: genre,
+          description: description,
+          genre: genre,
+        },
       },
     });
   };

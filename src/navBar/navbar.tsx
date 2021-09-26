@@ -24,11 +24,11 @@ class NavBar extends React.Component {
       >
         <Menu.Item key="mail" icon={<PlusSquareOutlined />}>
           Add Anime
-          <Link to="/animes.form.component" />
+          <Link to="/anime/add" />
         </Menu.Item>
 
         <Menu.Item key="alipay" icon={<UnorderedListOutlined />}>
-          List Animes <Link to="/animes.list.component" />
+          List Animes <Link to="/anime" />
         </Menu.Item>
       </Menu>
     );

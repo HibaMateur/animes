@@ -63,11 +63,11 @@ const AnimeList = () => {
     });
   };
 
-  const findAnimeHandler = (id: number) => {
+  const findAnimeHandler = (anime: any) => {
     dispatch({
       type: "FIND_ANIME",
       payload: {
-        id,
+        animes,
       },
     });
   };
@@ -88,24 +88,17 @@ const AnimeList = () => {
               <td style={{ backgroundColor: "white" }}>{anime.genre}</td>
               <td style={{ backgroundColor: "white" }}>{anime.mangaka}</td>
               <td>
-                <Link to={`/animes.formUpdate.component/${anime.id}`}>
+                <Link to={`/anime/edit/${anime.id}`}>
                   <Button>Edit</Button>
                   <Button onClick={() => deleteAnimeHandler(anime.id)}>
                     Delete
                   </Button>
                 </Link>
-                <Button onClick={showModal}>Details</Button>
-                <>
-                  <Modal
-                    title="Basic Modal"
-                    visible={isModalVisible}
-                    onOk={handleOk}
-                  >
-                    <ul>
-                      <li key={anime.id}>{anime.description} </li>
-                    </ul>
-                  </Modal>
-                </>
+                <Link to={`/anime/details/${anime.id}`}>
+                  <Button onClick={() => findAnimeHandler(anime)}>
+                    Details
+                  </Button>
+                </Link>
               </td>
             </tr>
           );
@@ -134,3 +127,14 @@ export default AnimeList;
         })}
       </ul>
     </Card>*/
+/*   <>
+                  <Modal
+                    title="Basic Modal"
+                    visible={isModalVisible}
+                    onOk={handleOk}
+                  >
+                    <ul>
+                      <li key={anime.id}>{anime.description} </li>
+                    </ul>
+                  </Modal>
+                </>*/

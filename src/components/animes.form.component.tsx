@@ -35,11 +35,13 @@ const AnimesForm = () => {
     dispatch({
       type: "ADD_ANIME",
       payload: {
-        name: name,
-        mangaka: mangaka,
-        id: id,
-        description: description,
-        genre: genre,
+        anime: {
+          name: name,
+          mangaka: mangaka,
+          id: id,
+          description: description,
+          genre: genre,
+        },
       },
     });
   };
